@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mini Excel Calculator</title>
+  <title>Motor Conversion Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Mini Excel Calculator</h2>
+<h2>Motor Conversion Calculator</h2>
 
-<table id="excelTable">
-  <tr>
-    <th></th>
-    <th>A</th>
-    <th>B</th>
-    <th>C</th>
+<!-- HP to kW -->
+<table class="calcTable">
+  <tr class="headerRow">
+    <th colspan="4" class="blue">Conversion HP → kW</th>
   </tr>
   <tr>
-    <th>1</th>
-    <td contenteditable="true" oninput="calculate()">0</td>
-    <td contenteditable="true" oninput="calculate()">0</td>
-    <td id="C1">0</td>
+    <th>HP</th>
+    <th>kW</th>
+    <th>Amp</th>
+    <th>Note</th>
   </tr>
   <tr>
-    <th>2</th>
-    <td contenteditable="true" oninput="calculate()">0</td>
-    <td contenteditable="true" oninput="calculate()">0</td>
-    <td id="C2">0</td>
+    <td><input type="number" id="hp1" class="yellow" placeholder="Enter HP"></td>
+    <td><input type="number" id="kw1" class="green" readonly></td>
+    <td><input type="number" id="amp1" class="orange" readonly></td>
+    <td>Feed HP in yellow to get kW & Current</td>
+  </tr>
+  <tr>
+    <td colspan="4"><button onclick="hpToKwAmp()">Calculate HP → kW & Amp</button></td>
   </tr>
 </table>
 
-<script src="script.js"></script>
-</body>
-</html>
+<br>
+
+<!-- kW to HP -->
+<table class="calcTable">
+  <tr class="headerRow">
+    <th colspan="4" class="blue">Conversion kW → HP</th>
+  </tr>
+  <tr>
+    <th>kW</th>
+    <th>HP</th>
+    <th>Amp</th>
+    <th>Note</th>
+  </tr>
+  <tr>
+    <td><input type="number" id="kw2" class="yellow" placeholder="Enter kW"></td>
+    <td><input type="number" id="hp2" class="green" readonly></td>
+    <td><input type="number" id="amp2" class="orange" readonly></td>
+    <td>Feed kW in yellow to get HP & Current</td>
+  </tr>
+  <tr>
+    <td colspan="4"><button oncl
