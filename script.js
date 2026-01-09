@@ -1,10 +1,33 @@
-function calculate() {
-  let table = document.getElementById("excelTable");
-  
-  // Example: Column C = A + B
-  for (let i = 1; i <= 2; i++) {
-    let a = parseFloat(table.rows[i].cells[1].innerText) || 0;
-    let b = parseFloat(table.rows[i].cells[2].innerText) || 0;
-    table.rows[i].cells[3].innerText = (a + b).toFixed(2);
+function hpToKwAmp() {
+  let hp = parseFloat(document.getElementById("hp1").value);
+  let voltage = parseFloat(document.getElementById("voltage").value);
+  let pf = parseFloat(document.getElementById("pf").value);
+
+  if (isNaN(hp)) {
+    alert("Please enter HP value");
+    return;
   }
+
+  let kw = hp / 1.341;
+  let current = (kw * 1000) / (1.732 * voltage * pf);
+
+  document.getElementById("kw1").value = kw.toFixed(2);
+  document.getElementById("amp1").value = current.toFixed(2);
+}
+
+function kwToHpAmp() {
+  let kw = parseFloat(document.getElementById("kw2").value);
+  let voltage = parseFloat(document.getElementById("voltage").value);
+  let pf = parseFloat(document.getElementById("pf").value);
+
+  if (isNaN(kw)) {
+    alert("Please enter kW value");
+    return;
+  }
+
+  let hp = kw * 1.341;
+  let current = (kw * 1000) / (1.732 * voltage * pf);
+
+  document.getElementById("hp2").value = hp.toFixed(2);
+  document.getElementById("amp2").value = current.toFixed(2);
 }
