@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kartik Calculation Website</title>
+  <title>Electrical Calculators</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome Kartik</h1>
-  <p>Your website is live 🎉</p>
+
+<h2>Motor Current Calculator</h2>
+
+<label>Motor Power (kW):</label><br>
+<input type="number" id="kw"><br><br>
+
+<label>Voltage (V):</label><br>
+<input type="number" id="voltage" value="415"><br><br>
+
+<label>Power Factor:</label><br>
+<input type="number" id="pf" value="0.8" step="0.01"><br><br>
+
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="result"></h3>
+
+<script src="script.js"></script>
 </body>
 </html>
